@@ -84,10 +84,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.com',
-    :port           => '465',
+    :port           => '587',
     :authentication => :plain,
-    :user_name      => 'nanofresh.vn@gmail.com',
-    :password       => '12345678a@',
+    :user_name      => 'trikm.sampleapp@gmail.com',
+    :password       => 'hedspi56',
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
