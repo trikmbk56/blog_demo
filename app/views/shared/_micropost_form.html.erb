@@ -1,7 +1,10 @@
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_field :title, placeholder: "Please enter title..." %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Please enter content..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="picture">

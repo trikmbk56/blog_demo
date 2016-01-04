@@ -254,6 +254,15 @@ input {
     margin-top: 5em;
     padding-top: 0;
   }
+  .title {
+    display: block;
+    font-weight: bold;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
   .content {
     display: block;
     margin-left: 60px;
@@ -264,8 +273,6 @@ input {
   }
   .timestamp {
     color: $gray-light;
-    display: block;
-    margin-left: 60px;
   }
   .gravatar {
     float: left;
