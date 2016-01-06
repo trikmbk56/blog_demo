@@ -80,7 +80,7 @@ Rails.application.configure do
   #config to mailer feature
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'trikm-blog-demo.heroku.com'
+  host = 'trikm-blog-demo.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.com',
