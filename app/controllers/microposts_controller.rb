@@ -19,6 +19,12 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def show
+    @micropost = Micropost.find(params[:id])
+    @comments = @micropost.all_comments.paginate(page: params[:page])
+    @comment = @micropost.comments.build
+  end
+
   private
 
     def micropost_params
