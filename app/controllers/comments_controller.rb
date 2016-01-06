@@ -6,10 +6,12 @@ class CommentsController < ApplicationController
     @micropost = Micropost.find(params[:comment][:micropost_id])
   	@comment = @micropost.comments.build(comment_params)
     if @comment.save
-      flash[:success] = "Comment posted"
-      redirect_to @micropost
+      respond_to do |format|
+      format.html { redirect_to @micropost }
+      format.js
+    end
     else
-      flash[:alert] = "Comment error"
+      flash[:alert] = "Cann't create comment"
       redirect_to @micropost
     end
   end
@@ -17,10 +19,13 @@ class CommentsController < ApplicationController
   def destroy
     @micropost = @comment.micropost
     if @comment.destroy
-      flash[:success] = "Comment deleted"
-      redirect_to @micropost
+      respond_to do |format|
+      format.html { redirect_to @micropost }
+      format.js
+    end
     else
       flash[:alert] = "Cann't delete this comment"
+      redirect_to @micropost
     end 
   end
 
