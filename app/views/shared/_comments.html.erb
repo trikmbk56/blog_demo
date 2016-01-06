@@ -1,0 +1,7 @@
+<% if @comments.any? %>
+	<h5>Comments(<%= @comments.count %>)</h5>
+  <ol class="comments">
+    <%= render @comments %>
+  </ol>
+  <%= will_paginate @comments %>
+<% end %>
