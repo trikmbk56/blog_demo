@@ -24,6 +24,24 @@ class CommentsController < ApplicationController
     end 
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @micropost = @comment.micropost
+    @user = @comment.user
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @micropost = @comment.micropost
+    if !@comment.update(comment_params)
+      flash[:alert] = "Cann't edit comment"
+      redirect_to @micropost
+    else
+      flash[:success] = "Updated comment"
+      redirect_to @micropost
+    end
+  end
+
   private
   	def comment_params
   		params.require(:comment).permit(:content, :user_id)

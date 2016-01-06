@@ -24,6 +24,21 @@ class MicropostsController < ApplicationController
     @comments = @micropost.all_comments.paginate(page: params[:page])
     @comment = @micropost.comments.build
   end
+  
+  def edit
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def update
+     @micropost = Micropost.find(params[:id])
+     if @micropost.update(micropost_params)
+      flash[:success] = "Micropost updated"
+      redirect_to @micropost
+    else
+      flash[:alert] = "Cann't edit micropost"
+      redirect_to :back
+    end
+  end
 
   private
 
