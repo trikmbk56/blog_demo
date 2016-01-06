@@ -256,6 +256,7 @@ input {
     font-weight: bold;
   }
   .title {
+    word-wrap: break-word;
     display: block;
     margin-left: 60px;
     img {
@@ -264,6 +265,7 @@ input {
     }
   }
   .content {
+    word-wrap: break-word;
     display: block;
     margin-left: 60px;
     img {
