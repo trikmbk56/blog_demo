@@ -15,7 +15,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @micropost = @comment.micropost
     if @comment.destroy
+      flash[:success] = "Comment deleted"
       redirect_to @micropost
     else
       flash[:alert] = "Cann't delete this comment"
